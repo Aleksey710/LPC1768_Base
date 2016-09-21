@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>礦ision3 Build Log</h1>
+<h2>Project:</h2>
+D:\开发板资料\模块资料\触摸屏\写好的测试程序\文字和彩色条码测试\123.uv2
+Project File Date:  01/07/2008
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 123.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPNUM?123
+Program Size: data=9.0 xdata=49 code=5286
+creating hex file from "123"...
+"123" - 0 Error(s), 1 Warning(s).

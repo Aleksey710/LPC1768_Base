@@ -1,0 +1,122 @@
+C51 COMPILER V8.05a   123                                                                  08/07/2008 09:07:25 PAGE 1   
+
+
+C51 COMPILER V8.05a, COMPILATION OF MODULE 123
+OBJECT MODULE PLACED IN 123.OBJ
+COMPILER INVOKED BY: D:\Program Files\Keil\C51\BIN\C51.EXE 123.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          //#include<stdio.h>
+   3          #include<define.h>
+   4          #include<asc_zimo.h>
+   5          #include<Hz_zimo.h>
+   6          //#include<pic.h>
+   7          #include<ssd1289.c>
+   8          #include<touch.c>
+   9          
+  10          //=================================   
+  11          main()
+  12          {
+  13   1          uint T_x = 3;
+  14   1          uint T_y = 4;
+  15   1          uchar R_data=0;
+  16   1              uchar G_data=0;
+  17   1              uchar B_data=0;
+  18   1        //  uint i,j,k=0;
+  19   1          res=0;      //低电平复位
+  20   1          DelayNS(1000);
+  21   1          res=1;
+  22   1       //   send_command(0x00);
+  23   1       //   i=rece_data();
+  24   1          DelayNS(10000);//等待电源恢复正常
+  25   1          ssd1289_init();
+  26   1          touch_Init();
+  27   1          DispClear();        
+  28   1          send_command(0x22);
+  29   1      //      DispSmallPic(0, 0, 101, 103, pic2);
+  30   1              DrawString(84, 0, "触摸测试:", WHITE, RED, NORMAL);
+  31   1       //   DrawString(0, 152, "Easy Do It!!", RED, YELLOW, NORMAL);
+  32   1      //      DrawString(0, 168, "支持各种单片机", RED,YELLOW,TRANSP);
+  33   1      //      DrawString(0, 184, "提供Keil C51演示程序",YELLOW,RED,NORMAL);
+  34   1       //   DispSmallPic(148, 0, 92, 175, pic);
+  35   1              //==============================  
+  36   1       //     Set_ramaddr(0,200);
+  37   1      //      send_command(0x22);
+  38   1       /*     R_data=0;G_data=0;B_data=0;     
+  39   1          for(j=0;j<20;j++)//红色渐强条
+  40   1              {
+  41   1              for(i=0;i<240;i++)
+  42   1                  {R_data=i/8;send_data(R_data<<11|G_data<<5|B_data);}
+  43   1              }
+  44   1          R_data=0x1f;G_data=0x3f;B_data=0x1f;
+  45   1          for(j=0;j<20;j++)
+  46   1              {
+  47   1              for(i=0;i<240;i++)
+  48   1                  {
+  49   1                              G_data=0x3f-(i/4);
+  50   1                              B_data=0x1f-(i/8);
+  51   1                              send_data(R_data<<11|G_data<<5|B_data);}
+  52   1              }
+  53   1      //----------------------------------
+  54   1              R_data=0;G_data=0;B_data=0;
+  55   1          for(j=0;j<20;j++)//绿色渐强条
+C51 COMPILER V8.05a   123                                                                  08/07/2008 09:07:25 PAGE 2   
+
+  56   1              {
+  57   1              for(i=0;i<240;i++)
+  58   1                  {G_data=i/4;send_data(R_data<<11|G_data<<5|B_data);}
+  59   1              }
+  60   1          R_data=0x1f;G_data=0x3f;B_data=0x1f;
+  61   1          for(j=0;j<20;j++)
+  62   1              {
+  63   1              for(i=0;i<240;i++)
+  64   1                  {
+  65   1                              R_data=0x1f-(i/8);
+  66   1                              B_data=0x1f-(i/8);
+  67   1                              send_data(R_data<<11|G_data<<5|B_data);}
+  68   1              }
+  69   1      //----------------------------------
+  70   1              R_data=0;G_data=0;B_data=0;
+  71   1          for(j=0;j<20;j++)//蓝色渐强条
+  72   1              {
+  73   1              for(i=0;i<240;i++)
+  74   1                  {B_data=i/8;send_data(R_data<<11|G_data<<5|B_data);}
+  75   1              } 
+  76   1              B_data=0; 
+  77   1          R_data=0x1f;G_data=0x3f;B_data=0x1f;
+  78   1          for(j=0;j<20;j++)
+  79   1              {
+  80   1              for(i=0;i<240;i++)
+  81   1                  {
+  82   1                              G_data=0x3f-(i/4);
+  83   1                              R_data=0x1f-(i/8);
+  84   1                              send_data(R_data<<11|G_data<<5|B_data);}
+  85   1              }
+  86   1       //==============================   */             
+  87   1              while(1)
+  88   1          {   
+  89   2              if (touch_INT==0)
+  90   2              {
+  91   3                  touch_GetAdXY(&T_x, &T_y);
+  92   3                  DispNum(104, 20, T_x);
+  93   3                  DispNum(104, 40, T_y);
+  94   3              }
+  95   2          }
+  96   1      }
+  97          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1893    ----
+   CONSTANT SIZE    =   2108    ----
+   XDATA SIZE       =   ----      76
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

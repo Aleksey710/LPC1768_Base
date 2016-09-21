@@ -1,0 +1,1 @@
+-c --cpu Cortex-M3 -D__MICROLIB -g -O2 --apcs=interwork --diag_suppress 550 -I "D:\软件安装区\keil MDK\ARM\INC" -I "D:\软件安装区\keil MDK\ARM\INC\NXP\LPC17xx" -o ".\Flash\glcd_lpc1700.o" --omf_browse ".\Flash\glcd_lpc1700.crf" --depend ".\Flash\glcd_lpc1700.d" "GLCD_LPC1700.c"

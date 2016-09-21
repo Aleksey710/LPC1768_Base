@@ -1,0 +1,25 @@
+send_command(0x0);
+send_data(0x0001);DelayNS(10);
+send_command(0x01);
+send_data(0x233f);DelayNS(10);
+send_command(0x02);
+send_data(0x0600);DelayNS(10);
+send_command(0x03);
+send_data(0x6864);DelayNS(10);
+send_command(0x07);
+send_data(0x0033);DelayNS(10);
+send_command(0x10);
+send_data(0x0000);DelayNS(10);
+send_command(0x11);
+send_data(0x4870);DelayNS(10);
+send_command(0x1e);
+send_data(0x009f);DelayNS(10);
+send_command(0x44);
+send_data(0xef00);DelayNS(10);
+send_command(0x45);
+send_data(0x0000);DelayNS(10);
+send_command(0x46);
+send_data(0x013f);DelayNS(10);
+send_command(0x22);
+for(i=0;i<320*240;i++)
+	send_data(0x8000);
